@@ -1,0 +1,50 @@
+package screenshot;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
+
+public class ScreenShot_Date {
+	
+	public static void main(String[] args) throws IOException {
+		
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\OM SAI\\Desktop\\Software testing\\Automation tool\\chromedriver.exe");
+	
+		WebDriver driver =new ChromeDriver();
+		
+		driver.get("https://www.facebook.com/r.php");
+		
+		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Ankita rahane");
+		
+		  File ss = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		  
+		  
+		  Date dd=new Date();
+		  
+		  String dd11 = dd.toString();
+		  
+		  String date = dd11.replace(":", "_");
+		  
+		  File ff=new File("C:\\Users\\OM SAI\\Desktop\\Software testing\\Screenshots\\image_"+ date +".jpg");
+
+		  FileHandler.copy(ss, ff);
+		
+		 driver.quit();
+		 
+	}
+	
+	
+	}
+		
+		
+	
+
+
