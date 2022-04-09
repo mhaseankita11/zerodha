@@ -1,0 +1,43 @@
+public class Ascending_decending {
+
+	public static void main(String[] args) {
+		
+		int[]a=new int[5];
+		
+		a[0]=90;
+		a[1]=278;
+		a[2]=300;
+		a[3]=40;
+		a[4]=150;
+		
+		for (int i=0;i<=4;i++) {
+			 System.out.println(a[i]);
+			 
+			int sum=Arrays.stream(a).sum();  //sum of total array
+			System.out.println(sum);
+			
+			
+		}
+		
+		Arrays.sort(a);
+		
+		System.out.println("........Ascending order.........");
+		
+		
+		for (int i=0;i<=4;i++) {
+			 System.out.println(a[i]);
+			 
+		}
+			 System.out.println("Maximum value :"+a[4]);               // to calculate maximum value
+			 
+		
+				
+		
+		System.out.println("........Decending order.........");
+
+		
+		for (int i=4;i>=0;i--) {
+			 System.out.println(a[i]);
+		}
+	}
+}
