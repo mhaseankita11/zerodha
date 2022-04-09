@@ -1,0 +1,38 @@
+public class Sample_login {
+	
+	//declaration
+	
+	@FindBy(xpath="//input[@name='email']")private WebElement UserName;
+	
+	@FindBy(xpath="//input[@name='pass']")private WebElement Password;
+
+	@FindBy(xpath="//button[@name='login']")private WebElement LoginBtn;
+	
+	
+	//Initialization
+	
+	Sample_login(WebDriver driver){
+		
+		PageFactory.initElements(driver, this);
+	}
+	
+	//usage
+	
+	public void enterUserName() {
+		
+		UserName.sendKeys("Ansh");
+	}
+		
+		public void enterPassword() {
+			
+			Password.sendKeys("2019");
+			
+		}
+		
+		public void clickOnLogin() {
+			LoginBtn.click();	
+			
+		}
+	}
+	
+
