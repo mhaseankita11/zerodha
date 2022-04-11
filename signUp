@@ -1,0 +1,14 @@
+public String readExcelData(int row, int col) throws EncryptedDocumentException, IOException	{
+		
+		
+		FileInputStream ff=new FileInputStream(Config.excelData);
+		
+		Sheet sht = WorkbookFactory.create(ff).getSheet("Facebook");
+		
+		
+		String data = sht.getRow(row).getCell(col).getStringCellValue();
+		
+		return data;
+		
+	}
+	
